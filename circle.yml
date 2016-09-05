@@ -1,0 +1,15 @@
+machine:
+  services:
+    - docker
+dependencies:
+  cache_directories:
+    - "~/docker-libpoco"
+  override:
+    - docker info
+    - if [[ -e ~/docker-libpoco/image.tar ]]; then docker load --input ~/docker-libpoco/image.tar; fi
+    - docker build -t jlospinoso/docker-libpoco .
+    - mkdir -p ~/docker-libpoco; docker save --output ~/docker-libpoco/image.tar jlospinoso/libpoco
+test:
+  override:
+    - docker run -d --name=libpoco jlospinoso/libpoco; sleep 10
+- docker run -it --volumes-from=libpoco jlospinoso/libpoco ls /usr/local/lib | grep Poco
