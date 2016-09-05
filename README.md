@@ -8,9 +8,9 @@
 
 ## Installation
 
-Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/sameersbn/redis) and is the recommended method of installation.
+Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/jlospinoso/libpoco) and is the recommended method of installation.
 
-> **Note**: Builds are also available on [Quay.io](https://quay.io/repository/jlospinoso/docker-libpoco)
+> **Note**: Builds are also available on [Quay.io](https://quay.io/repository/jlospinoso/libpoco)
 
 ```bash
 docker pull jlospinoso/libpoco:latest
